@@ -72,7 +72,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 });
 }
  else if (cachedData){
-        seriesContainer.textContent = cachedData[0].series
+        seriesContainer.textContent = JSON.parse(cachedData)[0].series
         JSON.parse(cachedData).forEach(  match => {
                     const team1 = cleanTeamName(match.t1);
                     const logoUrl = getTeamLogo(team1);
