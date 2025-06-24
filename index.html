@@ -14,6 +14,7 @@
         - [ ] Any time after
         -->
         <link rel="stylesheet" href="styles.css">
+        <script src="index.js"></script>
         <title>AllOutCricket</title>
         <link rel="icon" href="https://t4.ftcdn.net/jpg/07/54/05/35/360_F_754053596_17zxxPw7JKW9tIQxPDqLMUcVgbPVGkUO.jpg">
     </head>
@@ -34,15 +35,33 @@
         - [ ] Project 4 (REQUIRED FEATURE) 
         - [ ] Any time after
         -->
-        <img id="header-img" src="img\cricket-player-logo-playing-short-600nw-2417878119.webp" alt="Batsman hitting a ball logo">
-        <h1>AllOutCricket</h1>
-        <h2>On. Every Ball Counts</h2>
-        <nav>
-            <a href="">HOME</a> 
-            <a href="">MATCHES</a> 
-            <a href="">TEAMS</a>
-            <a href="">LOCATION</a> 
-        </nav>
+        <div class="header">
+            <div id="header-left">
+                <img id="header-img" src="img\cricket-player-logo-playing-short-600nw-2417878119.webp" alt="Batsman hitting a ball logo">
+            </div>
+            <div id="header-right">
+                <h1>AllOutCricket</h1>
+                <h3>On. Every Ball Counts</h2>
+                <button class="header-button">LIVE MATCHES</button>
+                <button class="header-button">LOCATION</button>
+                <button class="header-button">TEAMS</button>
+             </div>
+        </div>
+
+
+        <!-- <nav class="navbar">
+            <div class="navdiv">
+                    <div class="logo">
+                        <h1>AllOutCricket</h1>
+                        <h2>On. Every Ball Counts</h2>
+                    </div>
+                    <ul>
+                        <li><a href="">LIVE MATCHES</a></li>
+                        <li><a href="">LOCATION</a></li>
+                        <li><a href="">TEAMS</a></li>
+                    </ul>
+            </div>
+        </nav> -->
            
         <!-- about
 
@@ -56,7 +75,7 @@
         - [ ] Project 4 (STRETCH FEATURE) 
         - [ ] Any time between / after
         --> 
-        
+        <div class="cricket-promo">
         <h2>About the Event</h2>
         <iframe width="560" height="315"
             src="https://www.youtube.com/embed/Joe0U-q4p74?start=195&autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1"
@@ -65,6 +84,7 @@
             allow="autoplay; encrypted-media"
             allowfullscreen>
         </iframe>
+        </div>
         <p>AllOutCricket is an annual cricket celebration 
             that brings together passionate players and fans 
             from across the region. The event is designed to promote 
@@ -93,44 +113,21 @@
         - [ ] Project 4 (STRETCH FEATURE) 
         - [ ] Any time between / after
         --> 
-        <h2>UPCOMING MATCHES</h2>
+         <h2>UPCOMING MATCHES</h2>
+          <!-- Use API shows UPCOMING match and types etc.. -->
+        <div id="match-container" ></div>
+        <!-- <img alt="" src="./img/placeholder.png"/>
+        <h3>Event Activity 1</h3>
+        <p>Description of event activity.</p>
+            
+        <img alt="Image description" src="./img/example.png"/>
+        <h3>Event Activity 2</h3>
+        <p>Description of event activity.</p>
 
-        <div class="match-container">
-         <div class="block1"> 
-        <img id = "event-image1" src="img\Seattle Orcas vs Texas Super Kings.jpeg" alt="cricke bat hit ball">
-        <h3 class="fix_header">Seattle Orcas vs Texas Super Kings</h3>
-        <ul>
-            <li>Date: June 16, 2025</li>
-            <li>Time: 6:30 PM EDT (3:30 PM PDT)</li>
-            <li>Venue: Oakland Coliseum, Oakland, California</li>
-        </ul> 
-        <p>This is the 7th match of the Major League Cricket season. The Seattle Orcas are set to face the Texas Super Kings in a 20-over contest.</p>
-        <button>Tickets</button> 
-         </div>
+        <img alt="Image description" src="./img/example.png"/>
+        <h3>Event Activity 2</h3>
+        <p>Description of event activity.</p> -->
 
-        <div class="block1">
-        <img id = "event-image2" alt="Image description" src="img\Washington Freedom vs LA Knight Riders.png"/>
-        <h3>Washington Freedom vs LA Knight Riders</h3>
-        <ul>
-            <li>Date: June 17, 2025</li>
-            <li>Time: 6:00 PM PDT (9:00 PM EDT)</li>
-            <li>Venue: Oakland Coliseum, Oakland, California</li>
-        </ul> 
-        <p>The Washington Freedom will face the LA Knight Riders in the 8th match of the Major League Cricket season.</p>
-        <button>Tickets</button> 
-        </div>
-        <div class="block1">
-        <img id = "event-image3" alt="Image description" src="img\MI New York vs Seattle Orcas.png"/>
-        <h3>MI New York vs Seattle Orcas</h3>
-        <ul>
-            <li>Date: June 18, 2025</li>
-            <li>Time: 6:00 PM PDT (9:00 PM EDT)</li>
-            <li>Venue: Oakland Coliseum, Oakland, California</li>
-        </ul> 
-        <p>MI New York will take on Seattle Orcas in the 9th match of the Major League Cricket season.</p>
-        <button>Tickets</button> 
-        </div>
-        </div>
         <!-- rsvp [PLACEHOLDER] [ADDED IN UNIT 6] -->
         <!-- success modal [PLACEHOLDER] [ADDED IN UNIT 9] --> 
 
@@ -156,6 +153,10 @@
         </a>
             
         <!-- footer [PLACEHOLDER] [ADDED IN UNIT 3] -->
+         <div class="footer">
+            <a href="">Learn More /</a>
+            <a href=""> Email Our Team</a>
+         </div>
         <!-- script [PLACEHOLDER] [ADDED IN UNIT 5] -->
 
     </body>
