@@ -13,7 +13,7 @@ const teamLogos = {
 //  remove [] from the team name
 function cleanTeamName(name) {
     // Remove anything in square brackets
-    return name.replace(/\s*\[.*?\]/, "").trim();
+    return name.replace(/\s*\[.*?\]/g, "").trim();
 }
 // Function to get team logo
 function getTeamLogo(teamName) {
@@ -22,40 +22,24 @@ function getTeamLogo(teamName) {
         return teamLogos[teamName];
     }
  }
- 
-window.addEventListener("DOMContentLoaded", function () {
-    const cachedData = localStorage.getItem("cachedTopMatches");
-    fetch("https://api.cricapi.com/v1/cricScore?apikey=cefa3164-fb82-4627-8d67-39982b59742d")
-        .then(res => res.json())
-        .then(data => {
-            const container = document.getElementById("match-container");
-            const seriesContainer = document.getElementById("series");
-            container.innerHTML = "";
-            seriesContainer.innerHTML = "";
-            if (data.status === "success"){
-                if (!data || !data.data || data.data.length === 0) {
-                    container.innerHTML = "<p>No upcoming matches available.</p>";
-                    return;
-                }
+ function display_result(upcoming){
+    const container = document.getElementById("match-container");
+    const seriesContainer = document.getElementById("series");
+    container.innerHTML = "";
+    seriesContainer.innerHTML = "";
+    // Filter upcoming or scheduled matches
+    localStorage.setItem("cachedTopMatches", JSON.stringify(upcoming));
+    seriesContainer.textContent = upcoming[0].series;
+    upcoming.forEach(  match => {
+                const team1 = cleanTeamName(match.t1);
+                const logoUrl = getTeamLogo(team1);
+                const team2 = cleanTeamName(match.t2);
+                const logoUrl2 = getTeamLogo(team2);
 
-                // Filter upcoming or scheduled matches
-                const upcoming = data.data
-                    .filter(match => match.status.includes("Match not started") && match.series.includes("Major League Cricket 2025"))
-
-                localStorage.setItem("cachedTopMatches", JSON.stringify(upcoming));
-                seriesContainer.textContent = upcoming[0].series;
-
-
-                upcoming.forEach(  match => {
-                    const team1 = cleanTeamName(match.t1);
-                    const logoUrl = getTeamLogo(team1);
-                    const team2 = cleanTeamName(match.t2);
-                    const logoUrl2 = getTeamLogo(team2);
-
-                    const block = document.createElement("div");
-                    block.className = "block1";
+                const block = document.createElement("div");
+                block.className = "block1";
                     
-                    block.innerHTML = `
+                block.innerHTML = `
 
                         <img src= ${logoUrl}  alt = "${team1} logo" class = "event-image">
                         <img src= ${logoUrl2} alt="${team2} logo" class = "event-image">
@@ -68,41 +52,22 @@ window.addEventListener("DOMContentLoaded", function () {
                         <p>Upcoming match between ${team1} and ${team2}. Stay tuned for updates!</p>
                         <button>Tickets</button>
                     `;
-                    container.appendChild(block);
+                container.appendChild(block);
                 });
-}
- else if (cachedData){
-        seriesContainer.textContent = JSON.parse(cachedData)[0].series
-        JSON.parse(cachedData).forEach(  match => {
-                    const team1 = cleanTeamName(match.t1);
-                    const logoUrl = getTeamLogo(team1);
-                    const team2 = cleanTeamName(match.t2);
-                    const logoUrl2 = getTeamLogo(team2);
 
-                    const block = document.createElement("div");
-                    block.className = "block1";
-                    
-                    block.innerHTML = `
-
-                        <img src= ${logoUrl}  alt = "${logoUrl} logo" class = "event-image">
-                        <img src= ${logoUrl2} alt="${logoUrl2} logo" class = "event-image">
-                        <h3>${team1} vs ${team2}</h3>
-                        <ul>
-                            <li>Date: ${new Date(match.dateTimeGMT).toLocaleString()}</li>
-                            <li>Status: ${match.status}</li>
-                            <li>Match Type: ${match.matchType}</li>
-                        </ul>
-                        <p>Upcoming match between ${team1} and ${team2}. Stay tuned for updates!</p>
-                        <button>Tickets</button>
-                    `;
-                    container.appendChild(block);
-                })
-
-
-}
-else{
-    container.innerHTML = "<p>API limit exceeded and no cached data available.</p>";
-}
+ }
+window.addEventListener("DOMContentLoaded", function () {
+    const cachedData = localStorage.getItem("cachedTopMatches");
+    fetch("https://api.cricapi.com/v1/cricScore?apikey=cefa3164-fb82-4627-8d67-39982b59742d")
+        .then(res => res.json())
+        .then(data => {
+            if (data.status === "success"){ 
+                display_result(data.data.filter(match => match.status.includes("Match not started") && match.series.includes("Major League Cricket 2025")))
+            }
+            else if (cachedData){
+                display_result(JSON.parse(cachedData))
+            }
+            else{document.getElementById("match-container").innerHTML = "<p>API limit exceeded and no cached data available.</p>";}
 })
         .catch(err => {
             console.error("Failed to load matches", err);
