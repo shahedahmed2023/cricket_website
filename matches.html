@@ -15,7 +15,7 @@
         -->
         <link rel="stylesheet" href="styles.css">
         <script src="index.js"></script>
-        <title>AllOutCricket</title>
+        <title>Fixtures</title>
         <link rel="icon" href="https://t4.ftcdn.net/jpg/07/54/05/35/360_F_754053596_17zxxPw7JKW9tIQxPDqLMUcVgbPVGkUO.jpg">
     </head>
     
@@ -35,18 +35,19 @@
         - [ ] Project 4 (REQUIRED FEATURE) 
         - [ ] Any time after
         -->
-        <div class="header">
+          <div class="header">
             <div id="header-left">
                 <img id="header-img" src="img\cricket-player-logo-playing-short-600nw-2417878119.webp" alt="Batsman hitting a ball logo">
             </div>
             <div id="header-right">
                 <h1>AllOutCricket</h1>
                 <h2>On. Every Ball Counts</h2>
+                <a href="index.html"><button class="header-button">HOME</button></a>
                 <a href="location.html"><button class="header-button">LOCATION</button></a>
-                <a href="matches.html"><button class="header-button first">MATCHES</button></a>
              </div>
         </div>
-           
+
+        
         <!-- about
 
         Purpose:
@@ -59,33 +60,11 @@
         - [ ] Project 4 (STRETCH FEATURE) 
         - [ ] Any time between / after
         --> 
-        <div class="cricket-promo">
-        <h2 id="series">About the Event</h2>
-        <iframe width="560" height="315"
-            src="https://www.youtube.com/embed/Joe0U-q4p74?start=195&autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1"
-            title="Major League Cricket Promo"
-            style="border:none;"
-            allow="autoplay; encrypted-media"
-            allowfullscreen>
-        </iframe>
+        <div id="matchbanner">
+        <h2>Matches</h2>
+        <img src="img\stripe.png" alt = "stripe color">
         </div>
-        <p>AllOutCricket is an annual cricket celebration 
-            that brings together passionate players and fans 
-            from across the region. The event is designed to promote 
-            the spirit of cricket through competitive matches, interactive 
-            fan zones, and family-friendly entertainment. Originally started as a local tournament, 
-            it has grown into a major community sports gathering featuring top teams and emerging talent. 
-            This event is perfect for die-hard cricket enthusiasts, casual fans, families, and anyone looking 
-            to enjoy a day filled with excitement, teamwork, and thrilling performances on the field.</p>
 
-
-        <h3>What to Expect</h3>
-        <h4>Tag Line</h4>
-        <ul>
-            <li> <b>Bullet 1:</b> <i>Description</i></li>
-            <li> <b>Bullet 2:</b> <i>Description</i></li>
-            <li> <b>Bullet 3:</b> <i>Description</i></li>
-        </ul>
         <!-- schedule
 
         Purpose:
@@ -97,20 +76,7 @@
         - [ ] Project 4 (STRETCH FEATURE) 
         - [ ] Any time between / after
         --> 
-         <h2>UPCOMING MATCHES</h2>
-          <!-- Use API shows UPCOMING match and types etc.. -->
         <div id="match-container" ></div>
-        <!-- <img alt="" src="./img/placeholder.png"/>
-        <h3>Event Activity 1</h3>
-        <p>Description of event activity.</p>
-            
-        <img alt="Image description" src="./img/example.png"/>
-        <h3>Event Activity 2</h3>
-        <p>Description of event activity.</p>
-
-        <img alt="Image description" src="./img/example.png"/>
-        <h3>Event Activity 2</h3>
-        <p>Description of event activity.</p> -->
 
         <!-- rsvp [PLACEHOLDER] [ADDED IN UNIT 6] -->
         <!-- success modal [PLACEHOLDER] [ADDED IN UNIT 9] --> 
@@ -126,13 +92,12 @@
         - [ ] Any time between / after
         --> 
         <h2>Links</h2>
+
         <!-- This <a> block is one link.  Copy and paste all 6 lines to create another link. -->
-        <a class="block" href="https://www.majorleaguecricket.com">
+        <a class="block" href="https://www.codepath.org">
             <article>
-                <h3>Major League Cricket (MLC)</h3>
-                <p> Major League Cricket (MLC) is the U.S. professional Twenty20 league, growing cricket’s popularity with fast, 
-                    exciting matches featuring top players.
-                </p>
+                <h3>Link title</h3>
+                <p>Link description</p>
             </article>
         </a>
             
@@ -142,6 +107,12 @@
             <a href=""> Email Our Team</a>
          </div>
         <!-- script [PLACEHOLDER] [ADDED IN UNIT 5] -->
+         <script>
+            window.addEventListener("DOMContentLoaded", () => {
+                        fetchAndDisplayMatches(null);
+            });
+         </script>
+
 
     </body>
 </html>
