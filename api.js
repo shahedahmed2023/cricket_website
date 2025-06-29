@@ -28,16 +28,12 @@ function getTeamLogo(teamName) {
     const container = document.getElementById("match-container");
     const seriesContainer = document.getElementById("series");
     container.innerHTML = "";
-    if (seriesContainer){
-        seriesContainer.innerHTML = "";
-    }
-    // Filter upcoming or scheduled matches
     if(upcoming.length <= 0){
             container.innerHTML = "<p>No upcoming matches found.</p>";
     }
     else{
-            localStorage.setItem("cachedTopMatches", JSON.stringify(upcoming));
             if (seriesContainer) {
+                        seriesContainer.innerHTML = "";
                         seriesContainer.textContent = upcoming[0].series;
             }
             upcoming.forEach(  match => {
@@ -68,12 +64,13 @@ function getTeamLogo(teamName) {
     }}
 
 function fetchAndDisplayMatches(limit = 3){
-     const cachedData = localStorage.getItem("cachedTopMatches");
     fetch("https://api.cricapi.com/v1/cricScore?apikey=cefa3164-fb82-4627-8d67-39982b59742d")
         .then(res => res.json())
         .then(data => {
+            const cachedData = localStorage.getItem("cachedTopMatches");
             if (data.status === "success"){ 
                 const upcoming = data.data.filter(match => match.status.includes("Match not started") && match.series.includes("Major League Cricket 2025"))
+                localStorage.setItem("cachedTopMatches", JSON.stringify(upcoming));
                 if (limit != null){
                     display_result(upcoming.slice(0, limit))
                 }
@@ -82,8 +79,12 @@ function fetchAndDisplayMatches(limit = 3){
                 }
             }
             else if (cachedData){
-                console.log(JSON.parse(cachedData))
-                display_result(JSON.parse(cachedData))
+                 if (limit != null){
+                    display_result(JSON.parse(cachedData).slice(0, limit))
+                }
+                else{
+                    display_result(JSON.parse(cachedData))
+                }
             }
             else{document.getElementById("match-container").innerHTML = "<p>API limit exceeded and no cached data available.</p>";}
 })
@@ -94,6 +95,12 @@ function fetchAndDisplayMatches(limit = 3){
 }
 
 window.addEventListener("DOMContentLoaded", function () {
-    fetchAndDisplayMatches()
+    if (window.location.pathname.endsWith("matches.html")) {
+        fetchAndDisplayMatches(null); // other pages
+    } else {
+        fetchAndDisplayMatches(4); // main page
+        
+    }
+        
 });
 
