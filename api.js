@@ -36,7 +36,7 @@ function getTeamLogo(teamName) {
                         seriesContainer.innerHTML = "";
                         seriesContainer.textContent = upcoming[0].series;
             }
-            upcoming.forEach(  match => {
+            upcoming.reverse().forEach(  match => {
                         const team1 = cleanTeamName(match.t1);
                         const logoUrl = getTeamLogo(team1);
                         const team2 = cleanTeamName(match.t2);
@@ -46,9 +46,10 @@ function getTeamLogo(teamName) {
                         block.className = "block1";
                             
                         block.innerHTML = `
-
+                                <div class="team-img">
                                 <img src= ${logoUrl}  alt = "${team1} logo" class = "event-image">
                                 <img src= ${logoUrl2} alt="${team2} logo" class = "event-image">
+                                </div>
                                 <h3>${team1} vs ${team2}</h3>
                                 <ul>
                                     <li>Date: ${new Date(match.dateTimeGMT).toLocaleString()}</li>
