@@ -179,49 +179,7 @@ button:hover {
   - [ ] Project 4 (STRETCH FEATURE) 
   - [ ] Any time after
 ***/
-  
-/* Mobile: phones (default working case) */
-@media (max-width: 575.98px) {
-  .carousel-inner .carousel-item img {
-    height: 21em;
-  }
-}
 
-/* Small devices: landscape phones */
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .carousel-inner .carousel-item img {
-    height:30em;
-
-  }
-}
-
-/* Medium devices: tablets */
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .carousel-inner .carousel-item img {
-    height: 33em;
-  }
-}
-
-/* Large devices: laptops */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-  .carousel-inner .carousel-item img {
-    height: 30em;
-  }
-}
-
-/* Extra large devices: desktops */
-@media (min-width: 1200px) {
-  .carousel-inner .carousel-item img {
-    height: 30em;
-  }
-}
-
-.carousel-inner .carousel-item div h3{
-  padding-top: 50px;
-}
-.carousel-inner .carousel-item div p{
-  padding-bottom: 50px;
-}
 .carousel-inner .carousel-item div{
     display: inline-block;
     text-align: left;
@@ -233,14 +191,33 @@ button:hover {
     min-height:480px;
 }
 
+
+.carousel-inner .carousel-item div h3{
+  padding-top: 50px;
+}
+.carousel-inner .carousel-item div p{
+  padding-bottom: 50px;
+}
+
+  
+/* Mobile: phones (default working case) */
 @media (max-width: 575.98px) {
-  .carousel-inner .carousel-item div {
+  .carousel-inner .carousel-item img {
+    height: 21em;
+  }
+
+   .carousel-inner .carousel-item div {
     font-size:smaller;
   }
+
 }
 
 /* Small devices: landscape phones */
 @media (min-width: 576px) and (max-width: 767.98px) {
+  .carousel-inner .carousel-item img {
+    height:30em;
+
+  }
   .carousel-inner .carousel-item div {
     font-size:15px;
   }
@@ -248,6 +225,9 @@ button:hover {
 
 /* Medium devices: tablets */
 @media (min-width: 768px) and (max-width: 991.98px) {
+  .carousel-inner .carousel-item img {
+    height: 33em;
+  }
   .carousel-inner .carousel-item div {
     font-size:larger;
   }
@@ -255,18 +235,23 @@ button:hover {
 
 /* Large devices: laptops */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .carousel-inner .carousel-item div {
+  .carousel-inner .carousel-item img {
+    height: 30em;
+  }
+   .carousel-inner .carousel-item div {
     font-size:large;
   }
 }
 
 /* Extra large devices: desktops */
 @media (min-width: 1200px) {
-  .carousel-inner .carousel-item div {
+  .carousel-inner .carousel-item img {
+    height: 30em;
+  }
+   .carousel-inner .carousel-item div {
     font-size:large;
   }
 }
-
 
 /*** Schedule Section ***
   
@@ -293,6 +278,8 @@ button:hover {
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    
+    
    } 
 .block1 {
     width: 300px;
@@ -300,7 +287,15 @@ button:hover {
     padding: 15px;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+.block1 button{
+  width:100px
+}
+
+ 
 
 
 /*** Links Section ***
