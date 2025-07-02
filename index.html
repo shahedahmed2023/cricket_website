@@ -14,9 +14,12 @@
         - [ ] Any time after
         -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="api.js"></script>
+        <!-- <script src="api.js"></script> -->
+         <script src="slideshow.js"></script>
         <script src="share-buttons.js"></script>
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="styles.css">
         <title>AllOutCricket</title>
@@ -70,27 +73,38 @@
         - [ ] Project 4 (STRETCH FEATURE) 
         - [ ] Any time between / after
         --> 
-        <div class="d-flex align-items-center flex-column">
-            <h2 id="series">About the Event</h2>
-            <div class="ratio ratio-16x9">
-                <iframe
-                    src="https://www.youtube.com/embed/Joe0U-q4p74?start=195&autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1"
-                    title="Major League Cricket Promo"
-                    style="border:none;"
-                    allow="autoplay; encrypted-media"
-                    allowfullscreen>
-                </iframe>
-            </div>    
-        <p>AllOutCricket is an annual cricket celebration 
-            that brings together passionate players and fans 
-            from across the region. The event is designed to promote 
-            the spirit of cricket through competitive matches, interactive 
-            fan zones, and family-friendly entertainment. Originally started as a local tournament, 
-            it has grown into a major community sports gathering featuring top teams and emerging talent. 
-            This event is perfect for die-hard cricket enthusiasts, casual fans, families, and anyone looking 
-            to enjoy a day filled with excitement, teamwork, and thrilling performances on the field.</p>
-        </div>
-        
+        <div id="carouselExample" class="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="w-100  p-4">
+                    <h3 >AllOutCricket</h3>
+                    <p> is an annual cricket celebration 
+                        that brings together passionate players and fans 
+                        from across the region. The event is designed to promote 
+                        the spirit of cricket through competitive matches, interactive 
+                        fan zones, and family-friendly entertainment. Originally started as a local tournament, 
+                        it has grown into a major community sports gathering featuring top teams and emerging talent. 
+                        This event is perfect for die-hard cricket enthusiasts, casual fans, families, and anyone looking 
+                        to enjoy a day filled with excitement, teamwork, and thrilling performances on the field.</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                <img  src="img\slide2.png" class="d-block w-100 " alt="..."  style="object-fit:fill">
+              </div>
+              <div class="carousel-item">
+                  <img src="img\slide3.jpg" class="d-block w-100" style="object-fit:fill" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+</div>
+
         <h3>What to Expect</h3>
         <h4>Tag Line</h4>
         <ul>
