@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("share-buttons").innerHTML = `
-    <div class="position-fixed top-0 end-0 p-3 d-flex flex-column gap-4 align-items-end border">
+    <div class="position-fixed top-0 end-0 p-3 d-flex flex-column gap-4 align-items-end border bg-dark">
       <a class="facebook text-primary fs-3 fs-md-4 fs-lg-5 border-bottom" target="_blank"><i class="fab fa-facebook"></i></a>
       <a class="twitter text-info fs-3 fs-md-4 fs-lg-5 border-bottom " target="_blank"><i class="fab fa-x-twitter"></i></a>
       <a class="reddit text-danger fs-3 fs-md-4 fs-lg-5 border-bottom" target="_blank"><i class="fab fa-reddit"></i></a>

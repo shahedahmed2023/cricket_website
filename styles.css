@@ -27,15 +27,28 @@ html {
 
 body {
     /* Add a background color or image */
-    background-color: var(--bg-color); /* see bottom of file for color variables */
+    /* background-color: var(--bg-color); see bottom of file for color variables */
 
     /* Customize the default size, color, and font for text*/
     font-size: 16px;
     color: var(--text-color);
-    font-family: Tahoma, sans-serif; /* This tells the browser: "Try to use `Tahoma`, and if you can't find it, use any sans-serif font." */
+    font-family: Tahoma, sans-serif;
+    
+     /* This tells the browser: "Try to use `Tahoma`, and if you can't find it, use any sans-serif font." */
 
     /* Put space around the edges of the webpage */
-    margin: 25px;
+ 
+    background-image: url("img/cricket-equipment-digital-art.jpg");
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-attachment: fixed; 
+ 
+    
+}
+
+.subbody{
+  padding: 25px;
 }
 
 /*** Text ***
@@ -114,14 +127,15 @@ button:hover {
   text-align:justify;
   position: relative ;
   z-index: 9999;
+   /* background-color:#F0E7F2; */
 }
 
 #header-left {
-  width: 40%;
+  width: 50%;
   
 }
 #header-right{
-  width:60%;
+  width: 50%;
 }
 
 #header-img{
@@ -191,6 +205,9 @@ button:hover {
     min-height:480px;
 }
 
+.carousel-item{
+  border-radius: 5px;
+}
 
 .carousel-inner .carousel-item div h3{
   padding-top: 50px;
@@ -278,10 +295,11 @@ button:hover {
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
-    
-    
+    border-radius: 10px;
    } 
 .block1 {
+    background-color: #222;
+    color: white;
     width: 300px;
     border: 1px solid #ccc;
     padding: 15px;
@@ -341,7 +359,7 @@ button:hover {
 :root {
     /* Light Mode */
     --bg-color: #f4f4f9;
-    --text-color: #000000fd;
+    --text-color: var(--text-color-dark-mode)
 
 
     /* Dark Mode */
@@ -359,7 +377,7 @@ button:hover {
     --error-color: #f8bbd0;
     --error-color-border: #e63946;
 }
-/* ----------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------MATCHPAGE----------------------------------------------------------------------------------------------------------------------------------------------------------- */
 #matchbanner{
   position: relative;
   width: 100%;
@@ -379,7 +397,7 @@ button:hover {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-/* ------------------------------------------------------------------------------------------------------------------------------------------- */
+/* -----------------------------------LOCATION PAGE-------------------------------------------------------------------------------------------------------------------------------------------- */
 
 
 .location {
@@ -402,4 +420,19 @@ button:hover {
   color: white;
   text-shadow: 2px 2px 4px black;
   font-size: 2em;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 15em ;
+}
+  
+.col {
+   width: 20em;
+}
+
+#stadiumbot{
+  padding-bottom: 30px;
+ 
 }
