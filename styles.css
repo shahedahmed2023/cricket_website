@@ -421,6 +421,7 @@ button:hover {
   text-shadow: 2px 2px 4px black;
   font-size: 2em;
 }
+/* ---------------------------------------------------------------------- */
 .card-body {
   display: flex;
   flex-direction: column;
@@ -435,4 +436,9 @@ button:hover {
 #stadiumbot{
   padding-bottom: 30px;
  
+
+}
+
+.container{
+  margin-bottom: 50px;
 }
