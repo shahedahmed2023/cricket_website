@@ -63,6 +63,7 @@ body {
 ***/
 
 h1 {
+  
     
 }
 
@@ -76,7 +77,7 @@ h3 {
 }
 
 h4 {
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
     
 }
 
@@ -87,7 +88,6 @@ p {
 }
 
 a, a * {
-  text-decoration: none;
     
 }
 
@@ -102,12 +102,10 @@ button {
     cursor: pointer;            /* makes the cursor change when over button */
 }
 
-li{
-  list-style: none;
-}
 
 button:hover {
     /* Make the button look different when the user hovers over it */
+     background-color: var(--accent-color-dark);
 }
 
 /*** header ***
@@ -121,24 +119,25 @@ button:hover {
   - [ ] Any time after
 ***/
 
-.header { /* Example A: This styles elements with class="header" */
+.header-container{ /* Example A: This styles elements with class="header" */
   padding-bottom: 20px;
   margin-bottom: 20px;
-  text-align:justify;
-  position: relative ;
-  z-index: 9999;
-   /* background-color:#F0E7F2; */
+  margin-top: 20px;
+  display: flex;
+  flex-direction:row;
+  text-align:center;
 }
 
-#header-left {
+.header-item:nth-of-type(1) {
   width: 50%;
   
 }
-#header-right{
+.header-item:nth-of-type(2){
   width: 50%;
 }
 
 #header-img{
+  margin-top: 25px;
   margin-left: 60px;
   margin-right: 50px;
   width: 100px; 
@@ -150,14 +149,20 @@ button:hover {
   font-size: 15px;
   font-weight: 600;
   color: white;
-  background-color: #2e8b57;
+  background-color: var(--accent-color-medium);
   text-align:justify;
   padding:12px;
   border-radius: 10px;
   margin-top:10px;
   cursor:pointer;
   
+}
 
+#share-buttons{
+  position: fixed !important;
+  z-index: 9999;
+  top: 5px;
+  right: 4em; 
 }
 
 /*** footer ***
@@ -182,6 +187,75 @@ button:hover {
 }
 
 /*** Navbar [PLACEHOLDER] [ADDED IN UNIT 4] ***/
+/*** Navigation bar (navbar) ***
+  
+  Purpose:
+  - Add style rules for your website's navbar
+
+  When To Modify:
+  - [ ] Project 4 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+.navbar ul {
+  z-index: 1000; /* Ensures the navbar is on top of other elements */
+  list-style-type:none;
+  overflow:hidden;
+  position:fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  margin-bottom:10px;
+  background-color: var(--accent-color-medium); 
+}
+
+.navbar ul li {
+    float: left;
+    margin: 10px;
+
+
+}
+
+.navbar ul li a  {
+  display:block;
+  text-decoration:none;
+  color: white;
+  text-align:left;
+  padding:5px;
+  margin-left:20px
+
+}
+
+.navbar ul li a:hover {
+  background-color: var(--accent-color-darkest);
+  color: var(--accent-color-green);
+}
+
+/* Mobile: phones (default working case) */
+@media (max-width: 575.98px) {
+   .navbar ul{
+    font-size: x-small;
+    width: 50%;
+    padding: 0px;
+  }
+  .navbar ul li a  {
+    margin: 0px;
+  }
+  #share-buttons{
+    right: 1em;
+    }
+  }
+
+
+@media  (min-width: 576px) and (max-width: 767.98px) {
+   .navbar ul{
+    font-size: small;
+  }
+  .navbar ul li a  {
+    margin-left:0;
+  }
+ 
+}
 
 /*** About Section ***
   
@@ -216,7 +290,6 @@ button:hover {
   padding-bottom: 50px;
 }
 
-  
 /* Mobile: phones (default working case) */
 @media (max-width: 575.98px) {
   .carousel-inner .carousel-item img {
@@ -270,6 +343,10 @@ button:hover {
   }
 }
 
+#news {
+  color: var(--text-color);
+}
+
 /*** Schedule Section ***
   
   Purpose:
@@ -280,6 +357,10 @@ button:hover {
   - [ ] Project 4 (STRETCH FEATURE) 
   - [ ] Any time after
 ***/
+#upcoming-match{
+  color:  var(--text-color);
+
+}
 .event-image{
   width: 80px;
   height: 70px;
@@ -298,16 +379,17 @@ button:hover {
     border-radius: 10px;
    } 
 .block1 {
-    background-color: #222;
-    color: white;
+     background-color: var(--accent-color-darkest); 
+    color: var(--text-color-dark-mode);   
     width: 300px;
     border: 1px solid #ccc;
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 5px var(--accent-color-dark);  
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
+    list-style-type:none;
 }
 .block1 button{
   width:100px
@@ -338,7 +420,11 @@ button:hover {
 .block:active{
     color: green;
     }
-         
+.link h2 , .link h3 , .link p {
+  color:var(--text-color);
+  font-weight: 600;
+}
+
 
 /*** RSVP [PLACEHOLDER] [ADDED IN UNIT 6] ***/
 /*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
@@ -359,19 +445,18 @@ button:hover {
 :root {
     /* Light Mode */
     --bg-color: #f4f4f9;
-    --text-color: var(--text-color-dark-mode)
-
+    --text-color: #212529;
 
     /* Dark Mode */
-    --bg-color-dark-mode: #3e3377;
-    --text-color-dark-mode: #fff;
+  --bg-color-dark-mode: #1c1c2e;    
+  --text-color-dark-mode: #ffffff; 
 
     /* Accent Colors */
-    --accent-color-light: #d2cff5;
-    --accent-color-medium: #684fb5;
-    --accent-color-dark: #482f95;
-    --accent-color-darkest: #231942;
-    --accent-color-green: #28eb76;
+  --accent-color-light: #e0f2e9;     
+  --accent-color-medium: #2e8b57;    
+  --accent-color-dark: #226644;    
+  --accent-color-darkest: #1a3a2c;   
+  --accent-color-green: #ffc107;     
 
     /* Error Colors */
     --error-color: #f8bbd0;
