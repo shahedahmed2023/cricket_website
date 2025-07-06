@@ -65,7 +65,7 @@ function getTeamLogo(teamName) {
     }}
 
 function fetchAndDisplayMatches(limit = 3){
-    fetch("https://api.cricapi.com/v1/cricScore?apikey=cefa3164-fb82-4627-8d67-39982b59742d")
+    fetch("https://api.cricapi.com/v1/cricScore?apikey=d7f1cc76-127a-4878-8c1e-a861a0a7ac24")
         .then(res => res.json())
         .then(data => {
             const cachedData = localStorage.getItem("cachedTopMatches");
