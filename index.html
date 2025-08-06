@@ -14,7 +14,7 @@
         - [ ] Any time after
         -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="server.js"></script>
+        <!-- <script src="server.js"></script> -->
         <script src="slideshow.js"></script>
         <script src="share-buttons.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -199,16 +199,18 @@ When To Modify:
                  <label for="email">Email</label>
                  <input name="email" id="email">
                  </div>
-
+                <div class="align">
+                    <div style="display: flex; align-items: center; ">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Write something here..." ></textarea>
+                    </div>
+                </div>
                 <div class="align ">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Write something here..." ></textarea>
+                     <!-- Submit button -->
+                   <input id="rsvp-button" type='button' value="Submit RSVP">
                 </div>
             </form>
-            <!-- Submit button -->
-             <div>
-                <button style="flex-shrink:1;"  id="rsvp-button">Submit RSVP</button>
-             </div>
+            
         </div>      
     </div>
    

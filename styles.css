@@ -493,7 +493,13 @@ button:hover {
   display: inline-block;
 }
 #rsvp-button{
-         padding: 5px 5px !important;   
+  padding: 5px 5px;   
+  background-color: green;    /* button color */
+  color: white;               /* text color */
+  border: none;               /* hides the default border */
+  padding: 5px 12px;          /* space between button's text and edge */
+  border-radius: 5px;         /* curved edges instead of square */
+  cursor: pointer;            /* makes the cursor change when over button */
 }
 
 .error {
@@ -586,7 +592,7 @@ button:hover {
    transition: color 0.5s ease;
 }
 
-.subbody.dark-mode button {
+.subbody.dark-mode button , .subbody.dark-mode #rsvp-button {
   background: linear-gradient(135deg, #00c853, #00e676);
   color: #eaffea !important;
   border: 1px solid #00ffae;
