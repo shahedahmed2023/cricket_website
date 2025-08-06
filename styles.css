@@ -1,4 +1,4 @@
-/*** You will not need this file until Unit 3 ***/
+r/*** You will not need this file until Unit 3 ***/
 /*** VSCodeEDU preview fix 
 
   Purpose:
@@ -455,13 +455,20 @@ button:hover {
   - [ ] Project 7 (REQUIRED FEATURE)
   - [ ] Any time after
 ***/
+#rsvp #rsvp-count{
+   color: black;
+  font-weight: 500;
 
+}
 .rsvp-container {
   display: flex;
   flex-direction: row;
   gap: 20px;
   width: 100%;
   padding-bottom: 50px;
+  color: black;
+  font-weight: 500;
+   
 
 }
 

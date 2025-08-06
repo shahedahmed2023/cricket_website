@@ -70,8 +70,9 @@ function fetchAndDisplayMatches(limit){
             
             const cachedData = localStorage.getItem("cachedTopMatches");
             if (data.status === "success"){ 
-                const upcoming = data.data.filter((match) => (match.status.includes("Match not started") && match.matchType.includes('test')
-                && match.series.includes('County Championship Division Two 2025')))
+                const upcoming = data.data.filter((match) => (match.status.includes("Match not started") && match.matchType.includes('t20')
+                && match.series.includes('The Hundred Mens Competition 2025')
+                 ))
                 localStorage.setItem("cachedTopMatches", JSON.stringify(upcoming));
                 if (limit != null){
                     display_result(upcoming.slice(0, limit))
