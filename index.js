@@ -22,6 +22,12 @@ const toggleDarkMode = (event) => {
 //             and tell it to use toggleDarkMode as its callback function
 
 themeButton.addEventListener('click', toggleDarkMode );
+
+
+
+
+
+
 /*** Form Handling [PLACEHOLDER] [ADDED IN UNIT 6] ***/
 
 const participantsContainer = document.querySelector('.rsvp-participants');
