@@ -28,8 +28,7 @@ const participantsContainer = document.querySelector('.rsvp-participants');
 const rsvpButton = document.querySelector('#rsvp-button');
 let participantCount = 3;
 
-const addParticipant = (event , person) => {
-  event.preventDefault();
+const addParticipant = (person) => {
 
   const participantEntry = document.createElement("p");
   participantEntry.innerText = `🎉 ${person.name} ${person.message}`;
@@ -62,7 +61,8 @@ const addParticipant = (event , person) => {
 ***/
 
 // Step 1: We actually don't need to select the form button again -- we already did it in the RSVP code above.
-const validateForm = () => {
+const validateForm = (event) => {
+   event.preventDefault();
   let containsErrors = false;
 
   var rsvpInputs = document.getElementById("rsvp-form").elements;
@@ -88,18 +88,17 @@ const validateForm = () => {
      }
   }
 
-    if (!person.email.includes('.com')|| !person.email.includes("@")) {
-       containsErrors = true;
-       email.classList.add('error')
-      }
-    else{
-      email.classList.remove('error')
+     if (!person.email.includes('.com') || !person.email.includes("@")) {
+        containsErrors = true;
+        rsvpInputs[1].classList.add('error'); 
+    } else {
+        rsvpInputs[1].classList.remove('error'); 
     }
     // TODO: If no errors, call addParticipant() and clear fields
   if (!containsErrors){
-      addParticipant(event , person);
+      addParticipant(person);
       toggleModal(person)
-      for (let i = 0; i < rsvpInputs.length; i++){
+      for (let i = 0; i < rsvpInputs.length-1 ; i++){
         rsvpInputs[i].value = '';
       }
     }
@@ -107,7 +106,7 @@ const validateForm = () => {
   }
 
 // Step 3: Replace the form button's event listener with a new one that calls validateForm()
-rsvpButton.addEventListener('click' , validateForm)
+rsvpButton.addEventListener('click', validateForm)
 
 /*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
 /*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
