@@ -1,0 +1,738 @@
+r/*** You will not need this file until Unit 3 ***/
+/*** VSCodeEDU preview fix 
+
+  Purpose:
+  - Fix VSCodeEDU issue that causes a white border to show around
+    the preview window
+
+  When To Modify:
+  - If you change the background color of your webpage, you may need to update this rule too.
+***/
+html {
+    background-color: var(--bg-color);
+    
+}
+
+/*** body ***
+  
+  Purpose:
+  - Add style rules for the body of your webpage
+  - This is useful if you want a rule to apply to EVERYTHING on your page
+    - (Tip: You can always override these rules later in the stylesheet)
+
+  When To Modify:
+  - [ ] Project 3 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+body {
+    /* Add a background color or image */
+    /* background-color: var(--bg-color); see bottom of file for color variables */
+
+    /* Customize the default size, color, and font for text*/
+    font-size: 16px;
+    color: var(--text-color);
+    font-family: Tahoma, sans-serif;
+    
+     /* This tells the browser: "Try to use `Tahoma`, and if you can't find it, use any sans-serif font." */
+
+    /* Put space around the edges of the webpage */
+ 
+    background-image: url("img/cricket-equipment-digital-art.jpg");
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-attachment: fixed; 
+ 
+    
+}
+
+.subbody{
+  padding: 25px;
+}
+
+/*** Text ***
+  
+  Purpose: 
+  - Add style rules for headings (h1-6),
+    paragraphs (p), links (a), and buttons
+
+  When To Modify:
+  - [X] Project 3 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+h1 {
+  
+    
+}
+
+h2 {
+  color: #222;
+  text-shadow: 1px 1px 2px #aaa;
+}
+
+h3 {
+  font-family: Rajdhani, sans-serif;    
+}
+
+h4 {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    
+}
+
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     line-height: 2;
+    
+}
+
+a, a * {
+    
+}
+
+
+button {
+    /* Example Style, replace with your own! */
+    background-color: green;    /* button color */
+    color: white;               /* text color */
+    border: none;               /* hides the default border */
+    padding: 5px 12px;          /* space between button's text and edge */
+    border-radius: 5px;         /* curved edges instead of square */
+    cursor: pointer;            /* makes the cursor change when over button */
+}
+
+
+button:hover {
+    /* Make the button look different when the user hovers over it */
+     background-color: var(--accent-color-dark);
+}
+
+/*** header ***
+  
+  Purpose:
+  - Add style rules for your website's header section
+
+  When To Modify:
+  - [X] Project 3 (REQUIRED FEATURE) 
+  - [ ] Project 4 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+.header-container{ /* Example A: This styles elements with class="header" */
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction:row;
+  text-align:center;
+}
+
+.header-item:nth-of-type(1) {
+  width: 50%;
+  
+}
+.header-item:nth-of-type(2){
+  width: 50%;
+}
+
+#header-img{
+  margin-top: 25px;
+  margin-left: 60px;
+  margin-right: 50px;
+  width: 100px; 
+  max-width: 150px;
+  
+}
+
+.header-button{
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  background-color: var(--accent-color-medium);
+  text-align:justify;
+  padding:12px;
+  border-radius: 10px;
+  margin-top:10px;
+  cursor:pointer;
+  
+}
+
+#share-buttons{
+  position: fixed !important;
+  z-index: 9999;
+  top: 5px;
+  right: 4em; 
+}
+
+/*** footer ***
+  
+  Purpose:
+  - Add style rules for your website's footer section
+
+  When To Modify:
+  - [ ] Project 3 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+.footer { /* Example B: This styles elements with class="footer" */
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:#e63946;
+  color:#192a42;
+  text-align: center;
+    
+}
+
+/*** Navbar [PLACEHOLDER] [ADDED IN UNIT 4] ***/
+/*** Navigation bar (navbar) ***
+  
+  Purpose:
+  - Add style rules for your website's navbar
+
+  When To Modify:
+  - [ ] Project 4 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+.navbar ul {
+  z-index: 1000; /* Ensures the navbar is on top of other elements */
+  list-style-type:none;
+  overflow:hidden;
+  position:fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  margin-bottom:10px;
+  background-color: var(--accent-color-medium); 
+}
+
+.navbar ul li {
+    float: left;
+    margin: 10px;
+
+
+}
+
+.navbar ul li a  {
+  display:block;
+  text-decoration:none;
+  color: white;
+  text-align:left;
+  padding:5px;
+  margin-left:20px
+
+}
+
+.navbar ul li a:hover {
+  background-color: var(--accent-color-darkest);
+  color: var(--accent-color-green);
+}
+.navbar ul li #theme-button{
+   font-size: 12px;
+   font-weight:600;  
+   font-family: Arial, sans-serif;
+   color: #39FF14;          
+   border: 2px dotted #39FF14;  
+   padding: 10px;
+   background-color: #002200; 
+   border-radius: 4px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+}
+.navbar ul li #theme-button:hover {
+  color: #00FFAA;             
+  text-decoration-color: #00FFAA;
+  border-color: #00FFAA;
+  background-color: #004422;   
+}
+
+/* Mobile: phones (default working case) */
+@media (max-width: 575.98px) {
+   .navbar ul{
+    font-size: x-small;
+    width: 50%;
+    padding: 0px;
+  }
+  .navbar ul li a  {
+    margin: 0px;
+  }
+  #share-buttons{
+    right: 1em;
+    }
+  }
+
+
+@media  (min-width: 576px) and (max-width: 767.98px) {
+   .navbar ul{
+    font-size: small;
+  }
+  .navbar ul li a  {
+    margin-left:0;
+  }
+ 
+}
+
+/*** About Section ***
+  
+  Purpose:
+  - Add style rules for your website's About section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+.carousel-inner .carousel-item div{
+    display: inline-block;
+    text-align: left;
+    color: white;
+    background-image: url('img/slide1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height:480px;
+}
+
+.carousel-item{
+  border-radius: 5px;
+}
+
+.carousel-inner .carousel-item div h3{
+  padding-top: 50px;
+}
+.carousel-inner .carousel-item div p{
+  padding-bottom: 50px;
+}
+
+/* Mobile: phones (default working case) */
+@media (max-width: 575.98px) {
+  .carousel-inner .carousel-item img {
+    height: 21em;
+  }
+
+   .carousel-inner .carousel-item div {
+    font-size:smaller;
+  }
+
+}
+
+/* Small devices: landscape phones */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .carousel-inner .carousel-item img {
+    height:30em;
+
+  }
+  .carousel-inner .carousel-item div {
+    font-size:15px;
+  }
+}
+
+/* Medium devices: tablets */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .carousel-inner .carousel-item img {
+    height: 33em;
+  }
+  .carousel-inner .carousel-item div {
+    font-size:larger;
+  }
+}
+
+/* Large devices: laptops */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .carousel-inner .carousel-item img {
+    height: 30em;
+  }
+   .carousel-inner .carousel-item div {
+    font-size:large;
+  }
+}
+
+/* Extra large devices: desktops */
+@media (min-width: 1200px) {
+  .carousel-inner .carousel-item img {
+    height: 30em;
+  }
+   .carousel-inner .carousel-item div {
+    font-size:large;
+  }
+}
+
+#news {
+  color: var(--text-color);
+}
+
+/*** Schedule Section ***
+  
+  Purpose:
+  - Add style rules for your website's Schedule section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+#upcoming-match{
+  color:  var(--text-color);
+
+}
+.event-image{
+  width: 80px;
+  height: 70px;
+  padding-left: 15px;
+  object-fit: fill;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+  
+
+#match-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 10px;
+   } 
+.block1 {
+    background-color: var(--accent-color-darkest); 
+    color: var(--text-color-dark-mode);   
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px var(--accent-color-dark);  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    list-style-type:none;
+}
+.block1 button{
+  width:100px
+}
+
+ 
+
+
+/*** Links Section ***
+  
+  Purpose:
+  - Add style rules for your website's Links section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+.block:link{
+    color:black;
+    }
+.block:visited{
+    color: blue;
+    }
+.block:hover{
+    color: red;
+    }
+.block:active{
+    color: green;
+    }
+.link h2 , .link h3 , .link p {
+  color:var(--text-color);
+  font-weight: 600;
+}
+
+
+
+/*** RSVP Section ***
+  
+  Purpose:
+  - Add style rules for your website's RSVP form
+
+  When To Modify:
+  - [ ] Project 6 (REQUIRED FEATURE)
+  - [ ] Project 7 (REQUIRED FEATURE)
+  - [ ] Any time after
+***/
+#rsvp #rsvp-count{
+   color: black;
+  font-weight: 500;
+
+}
+.rsvp-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  padding-bottom: 50px;
+  color: black;
+  font-weight: 500;
+   
+
+}
+
+.rsvp-para{
+  width: 55%;
+  padding-right: 10px;
+}
+
+.rsvp-participants{
+  width: 45%;
+  padding-right: 10px;
+}
+
+.form-container {
+   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.align{
+  margin: 10px 0px 20px 0px;
+  display: inline-block;
+}
+#rsvp-button{
+  padding: 5px 5px;   
+  background-color: green;    /* button color */
+  color: white;               /* text color */
+  border: none;               /* hides the default border */
+  padding: 5px 12px;          /* space between button's text and edge */
+  border-radius: 5px;         /* curved edges instead of square */
+  cursor: pointer;            /* makes the cursor change when over button */
+}
+
+.error {
+  border-style: solid;
+  border-width: 2px;
+  background-color: rgb(183, 89, 89);
+  border: 1px solid red ;
+
+  /* Set border-color and background */
+}
+/* Add other rsvp-related selectors here */
+/*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
+/*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
+/*** Success Modal  ***
+  
+  Purpose:
+  - Add style rules to your website's pop-up modal, which appears
+    when a user successfully submits the RSVP form
+
+  When To Modify:
+  - [ ] Project 9 (REQUIRED FEATURE)
+  - [ ] Any time after
+***/
+
+.modal {
+  display: none;   /* modal should be hidden by default*/
+  position: fixed; /* modal cannot move around the screen */
+  z-index: 2;      /* modal appears above other elements */ 
+  
+  /* TODO: Make the modal fill the entire screen */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Add a semi-transparent background to shadow non-modal elements*/
+  background-color: rgba(0,0,0,0.4); /* 40% opacity black */
+
+  /* Flexbox settings for modal */
+  /* These won't apply until we update "display:" from "hidden" to "flex" in our JS */
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container {
+    /* Change modal size and spacing here */
+    padding: 50px;
+    width: 55%;
+
+    /* Customize modal style here */
+    background-color: lightsteelblue;
+    color: black;
+    text-align: center;
+    font-size: 1rem;
+    font-family: monospace;
+
+    /* Optional: Use flexbox to customize .modal-item layout */
+    display: flex;
+
+}
+#success-modal img {
+  max-width: 100%;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+/*** Dark Mode [PLACEHOLDER] [ADDED IN UNIT 5] ***/
+/* Default dark mode style */
+.dark-mode {
+  background: linear-gradient(135deg, #0f2f1d, #174c36, #1b5e20);
+  transition: background 0.5s ease
+}
+
+.subbody.dark-mode a {
+  color: #00ffae;
+
+}
+
+.subbody.dark-mode h2, 
+.subbody.dark-mode h3,
+.subbody.dark-mode p,
+.subbody.dark-mode label,
+.subbody.dark-mode h4 {
+   text-shadow: 0 0 8px #00ffae;
+   color: #d4ffd4 !important;
+   transition: color 0.5s ease;
+}
+
+.subbody.dark-mode button , .subbody.dark-mode #rsvp-button {
+  background: linear-gradient(135deg, #00c853, #00e676);
+  color: #eaffea !important;
+  border: 1px solid #00ffae;
+  box-shadow: 0 0 10px #00ffae;
+}
+
+.subbody.dark-mode button:hover {
+  background: linear-gradient(135deg, #00e676, #69f0ae);              
+  border-color: #69f0ae;                                
+  box-shadow: 0 0 15px #69f0ae, 0 0 5px #00ffae inset;   
+  transform: scale(1.03);                               
+  transition: all 0.3s ease;                           
+}
+
+
+.subbody.dark-mode .navbar ul,
+.subbody.dark-mode .footer {
+  background: rgba(10, 40, 20, 0.85);
+  box-shadow: 0 0 15px #00ffae;
+  transition: background 0.5s ease;
+}
+
+.subbody.dark-mode .block1 {
+  background: rgba(20, 60, 30, 0.85);
+  color: #ccffcc;
+  border: 1px solid #00ffae;
+  box-shadow: 0 0 15px #00e676;
+  transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Example: Different dark mode style for h1 */
+.dark-mode h1 {
+   text-shadow: 0 0 8px #00ffae;
+   color: #d4ffd4 !important;
+   transition: color 0.5s ease;
+    
+}
+
+/* Example: Different dark mode style for visited links */
+.dark-mode a:visited {
+  color: #b5ffb5;
+}
+
+.dark-mode a:hover {
+  color: #00ffae !important;
+  text-decoration: underline !important;
+  text-shadow: 0 0 5px #00ffae !important;
+}
+
+
+
+/*** Custom Colors (OPTIONAL) ***
+  
+  Purpose:
+  - Use CSS variables to define custom colors for your website
+  - To get you started, we've provided the color scheme used in our example site.
+  - To reference a color variable in your css, use var(--variable-name) in place of a color value
+
+  When To Modify:
+  - [ ] Any time (OPTIONAL)
+***/
+
+:root {
+    /* Light Mode */
+    --bg-color: #f4f4f9;
+    --text-color: #212529;
+
+    /* Dark Mode */
+  --bg-color-dark-mode: #1c1c2e;    
+  --text-color-dark-mode: #ffffff; 
+
+    /* Accent Colors */
+  --accent-color-light: #e0f2e9;     
+  --accent-color-medium: #2e8b57;    
+  --accent-color-dark: #226644;    
+  --accent-color-darkest: #1a3a2c;   
+  --accent-color-green: #ffc107;     
+
+    /* Error Colors */
+    --error-color: #f8bbd0;
+    --error-color-border: #e63946;
+}
+/* ------------------------MATCHPAGE----------------------------------------------------------------------------------------------------------------------------------------------------------- */
+#matchbanner{
+  position: relative;
+  width: 100%;
+  max-height:280px;
+  overflow:hidden;
+  margin-bottom: 40px;
+}
+#matchbanner img{
+  width: 100%;
+  height: auto;
+  
+
+}
+#matchbanner h2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+/* -----------------------------------LOCATION PAGE-------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+.location {
+  position: relative;
+  flex: 1;
+  
+}
+
+.location img {
+  width: 100%;
+  height: 250px;         
+  object-fit: fill;    
+}
+
+.location h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 2px 2px 4px black;
+  font-size: 2em;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 15em ;
+  background-color:#004422;
+  color:white;
+}
+  
+.col {
+   width: 20em;
+}
+
+#stadiumbot{
+  padding-bottom: 30px;
+ 
+}
